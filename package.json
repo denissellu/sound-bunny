@@ -1,0 +1,14 @@
+{
+  "name": "sound-bunny",
+  "version": "0.0.1",
+  "description": "Yet another sound board desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Denis Sellu <hingasellu@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.12"
+  }
+}
