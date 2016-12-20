@@ -8,5 +8,5 @@ app.on('ready', () => {
       frame: false,
       resizable: false,
     })
-    win.loadURL(`file://${__dirname}/app/index.html`)
+    win.loadURL(`file://${__dirname}/app/app.html`)
 })
