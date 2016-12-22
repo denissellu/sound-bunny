@@ -1,19 +1,28 @@
 'use strict';
 
-var soundButtons = document.querySelectorAll('.button-sound');
+const electron = require('electron')
+const {ipcRenderer} = electron
 
-for (var i = 0; i < soundButtons.length; i++) {
-  var soundButton = soundButtons[i];
-  var soundName = soundButton.attributes['data-sound'].value;
-  var fileType = soundButton.attributes['data-file-type'].value;
+let soundButtons = document.querySelectorAll('.button-sound');
+
+for (let i = 0; i < soundButtons.length; i++) {
+  let soundButton = soundButtons[i];
+  let soundName = soundButton.attributes['data-sound'].value;
+  let fileType = soundButton.attributes['data-file-type'].value;
 
   prepareButton(soundButton, soundName, fileType);
 }
 
 function prepareButton(buttonEl, soundName, fileType) {
-  var audio = new Audio(__dirname + '/sounds/' + soundName + '.' + fileType);
+  let audio = new Audio(__dirname + '/sounds/' + soundName + '.' + fileType);
   buttonEl.addEventListener('click', function () {
     audio.currentTime = 0;
     audio.play();
   });
 }
+
+let closeEl = document.querySelector('.close');
+
+closeEl.addEventListener('click', function () {
+  ipcRenderer.send('close-main-window');
+});

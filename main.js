@@ -1,5 +1,5 @@
 const electron = require('electron')
-const {app, BrowserWindow} = electron
+const {app, BrowserWindow, ipcMain} = electron
 
 app.on('ready', () => {
     let win = new BrowserWindow({
@@ -10,4 +10,9 @@ app.on('ready', () => {
     })
 
     win.loadURL(`file://${__dirname}/app/app.html`)
+    win.webContents.openDevTools();
 })
+
+ipcMain.on('close-main-window', function () {
+  app.quit();
+});
