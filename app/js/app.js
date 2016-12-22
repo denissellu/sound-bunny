@@ -1,7 +1,7 @@
 'use strict';
 
-const electron = require('electron')
-const {ipcRenderer} = electron
+const remote = require('electron').remote;
+const {app} = remote
 
 let soundButtons = document.querySelectorAll('.button-sound');
 
@@ -24,5 +24,5 @@ function prepareButton(buttonEl, soundName, fileType) {
 let closeEl = document.querySelector('.close');
 
 closeEl.addEventListener('click', function () {
-  ipcRenderer.send('close-main-window');
+  app.quit();
 });

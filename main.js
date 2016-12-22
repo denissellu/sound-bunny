@@ -12,7 +12,3 @@ app.on('ready', () => {
     win.loadURL(`file://${__dirname}/app/app.html`)
     win.webContents.openDevTools();
 })
-
-ipcMain.on('close-main-window', function () {
-  app.quit();
-});
