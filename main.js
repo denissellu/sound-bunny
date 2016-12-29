@@ -21,9 +21,9 @@ exports.openSettings = function() {
   }
 
   settingsWindow = new BrowserWindow({
-    height: 200,
+    height: 300,
     resizable: false,
-    width: 200,
+    width: 300,
     titleBarStyle: 'hidden-inset'
   });
 
