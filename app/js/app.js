@@ -1,9 +1,12 @@
 'use strict';
 
 const remote = require('electron').remote;
-const {app} = remote
+const {app, BrowserWindow} = remote
+const main = remote.require('./main.js');
 
 let soundButtons = document.querySelectorAll('.button-sound');
+let closeEl = document.querySelector('.close');
+let settingsEl = document.querySelector('.settings');
 
 for (let i = 0; i < soundButtons.length; i++) {
   let soundButton = soundButtons[i];
@@ -21,7 +24,9 @@ function prepareButton(buttonEl, soundName, fileType) {
   });
 }
 
-let closeEl = document.querySelector('.close');
+settingsEl.addEventListener('click', function() {
+  main.openSettings();
+});
 
 closeEl.addEventListener('click', function () {
   app.quit();

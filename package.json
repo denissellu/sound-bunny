@@ -4,7 +4,8 @@
   "description": "Yet another sound board desktop app",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "dev": "electron main.js dev"
   },
   "author": "Denis Sellu <hingasellu@gmail.com>",
   "license": "MIT",
