@@ -11,5 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron-prebuilt": "^1.4.12"
+  },
+  "dependencies": {
+    "nconf": "^0.8.4"
   }
 }
